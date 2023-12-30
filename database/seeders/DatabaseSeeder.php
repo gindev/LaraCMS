@@ -4,6 +4,10 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Database\Seeders\PagesTableSeeder;
+use Database\Seeders\PostsTableSeeder;
+use Database\Seeders\RolesTableSeeder;
+use Database\Seeders\UsersTableSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,5 +22,12 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        $this->call([
+            RolesTableSeeder::class,
+            UsersTableSeeder::class,
+            PagesTableSeeder::class,
+            PostsTableSeeder::class,
+        ]);
     }
 }
